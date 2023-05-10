@@ -1,0 +1,277 @@
+@tailwind base;
+
+:root {
+  --primary: #E1D6F1;
+  --secondary: #6323BB;
+}
+
+:root.dark {
+  --primary: #210747;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 5px;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-leemon-purple-dark
+  }
+
+  #chart * {
+    @apply text-[10px] sm:text-[14px]
+  }
+}
+
+
+@font-face {
+  font-family: 'Bold20';
+  font-weight: normal, 700;
+  src: url('/fonts/SharpGrotesk-Bold20.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Book20';
+  font-weight: normal;
+  src: url('/fonts/SharpGrotesk-Book20.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Light20';
+  font-weight: lighter;
+  src: url('/fonts/SharpGrotesk-Light20.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Medium20';
+  font-weight: normal;
+  src: url('/fonts/SharpGrotesk-Medium20.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SemiBold20';
+  font-weight: normal;
+  src: url('/fonts/SharpGrotesk-SemiBold20.woff2') format('woff2');
+}
+
+
+.outlined {
+  text-shadow:
+    -0.5px -0.5px 0 #39146E,
+     0   -0.5px 0 #39146E,
+     0.5px -0.5px 0 #39146E,
+     0.5px  0   0 #39146E,
+     0.5px  0.5px 0 #39146E,
+     0    0.5px 0 #39146E,
+    -0.5px  0.5px 0 #39146E,
+    -0.5px  0   0 #39146E;
+}
+
+
+
+.theme-switcher input:checked ~ span:last-child {
+  --tw-translate-x: 1.75rem; /* translate-x-7 */
+}
+.switcher input:checked ~ span:last-child {
+  --tw-translate-x: 1.14rem; /* translate-x-7 */
+}
+
+/* ------------------ BIG SWITCHER -----------------------*/
+.big-switcher {
+  @apply text-leemon-purple-dark2
+}
+
+.dark .big-switcher {
+  @apply text-[#635773]
+}
+
+.big-switcher input:checked ~ span:last-child {
+  --tw-translate-x: 4.7rem; /* translate-x-7 */
+}
+
+.big-switcher span.active {
+  @apply font-semibold20
+}
+
+.dark .big-switcher span.active {
+  @apply text-leemon-purple-dark2
+}
+
+.big-switcher span.inactive {
+    @apply font-book20
+}
+
+.big-switcher input:checked ~ div span.active {
+  @apply font-book20
+}
+
+.dark .big-switcher input:checked ~ div span.active {
+  @apply text-[#635773]
+}
+
+.big-switcher input:checked ~ div span.inactive {
+  @apply font-semibold20
+}
+
+.dark .big-switcher input:checked ~ div span.inactive {
+  @apply font-semibold20 text-leemon-purple-dark2
+}
+
+
+
+/* ------------------ CHARTIST -----------------------*/
+
+#chart * {
+  font-family: "Book20";
+  /* font-size: 14px !important; */
+  color: #6323BB !important;
+}
+
+.dark #chart * {
+  color:#B1FB23 !important;
+}
+
+#chart .ct-series-a .ct-area { 
+  fill: #44D970 !important;
+  /* fill: linear-gradient(red, orange, yellow, green, blue) !important; */
+ 
+}
+
+#chart path:last-of-type {
+  stroke: #44D970 !important;
+}
+
+#chart g.ct-series.ct-series-a line { 
+  stroke: #44D970 !important;
+}
+
+#chart .ct-label.ct-vertical.ct-end {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 60px !important;
+  height: 25px !important;
+  margin-top: 30px !important;
+  margin-right: 20px !important;
+  text-align: center !important;
+  /* padding-left: 15px !important; */
+  /* cursor: pointer !important; */
+}
+
+#chart .ct-label.ct-vertical.ct-end:hover {
+  background-color: #44D970;
+  border-radius: 5px;
+  color: white !important;
+}
+
+#chart .ct-label.ct-horizontal.ct-end {
+  padding-top: 14px !important;
+}
+
+#chart .ct-grid.ct-vertical {
+  stroke-dasharray: 0 !important;
+  stroke: #7435D8;
+  opacity: 0.1;
+}
+
+.chartist-tooltip:before {
+  margin-left: -5px !important;
+  border: 5px solid transparent !important;
+  border-top-color: transparent !important;
+}
+
+.chart-tooltip {
+  background-color: #B1FB23 !important;
+  border-radius: 10px !important;
+  font-family: "Book20" !important;
+  font-size: 12px !important;
+  color: #401484;
+  box-shadow: 5px 5px 0 #401484;
+}
+
+.dark .chart-tooltip {
+  background-color: #401484 !important;
+  border-radius: 10px !important;
+  color: #B1FB23 ;
+  box-shadow: 5px 5px 0 #11002C;
+}
+.chart-tooltip .chartist-tooltip-description {
+  font-weight: bold;
+}
+
+.chart-tooltip .chartist-tooltip-value {
+  font-size: 14px !important;
+  margin: 0 5px;
+}
+
+.dark .chart-tooltip .chartist-tooltip-value {
+  color: white;
+}
+
+/* ----------------------------------------------------------------- */
+
+.tippy-box {
+  background-color: #6323BB !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  border: 1px solid #44D970 !important;
+  max-width: 230px !important;
+  min-height: 55px !important;
+  font-family: "Book20" !important;
+  font-size: 9px !important;
+  box-shadow: 3px 3px 0px #44D970 !important;
+}
+
+.dark .tippy-box {
+  background-color: #1A043A !important;
+}
+
+.tippy-box[data-placement^='top'] > .tippy-arrow::before {
+  transform: scaleX(0.6) !important;
+  border-top-color: #6323BB !important;
+}
+.tippy-box[data-placement^='bottom'] > .tippy-arrow::before {
+  transform: scaleX(0.6) !important;
+  border-bottom-color: #6323BB !important;
+}
+.tippy-box[data-placement^='left'] > .tippy-arrow::before {
+  transform: scaleX(0.6) !important;
+  border-left-color: #6323BB !important;
+}
+.tippy-box[data-placement^='right'] > .tippy-arrow::before {
+  transform: scaleX(0.6) !important;
+  border-right-color: #6323BB !important;
+}
+
+.dark .tippy-box[data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: #1A043A !important;
+}
+
+.dark .tippy-box[data-placement^='bottom'] > .tippy-arrow::before {
+  border-top-color: #1A043A !important;
+}
+.dark .tippy-box[data-placement^='left'] > .tippy-arrow::before {
+  border-top-color: #1A043A !important;
+}
+.dark .tippy-box[data-placement^='right'] > .tippy-arrow::before {
+  border-top-color: #1A043A !important;
+}
